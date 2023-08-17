@@ -16,7 +16,20 @@ $(document).ready(function() {
                 ]
             }),
             success: function(response) {
-                var predictionResult = 'Predicted Class: ' + response.prediction;
+                var name;
+                if (response.prediction == 0) {
+                    name = "Iris setosa"
+                }
+                else if (response.prediction == 1) {
+                    name = "Iris versicolor"
+                }
+                else if (response.prediction == 2) {
+                    name = "Iris virginica"
+                }
+                else {
+                    name = "can't identify"
+                }
+                var predictionResult = 'Predicted Class: ' + name;
                 $('#prediction-result').text(predictionResult);
             }
         });
