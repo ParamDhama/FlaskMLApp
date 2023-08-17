@@ -9,7 +9,7 @@ This is a simple web application built with Flask that allows users to make pred
 
 ## Getting Started
 
-1. Clone this repository: `git clone https://github.com/your-username/your-flask-ml-app.git`
+1. Clone this repository: `git clone https://github.com/ParamDhama/FlaskMLApp.git`
 2. Navigate to the project folder: `cd your-flask-ml-app`
 3. Set up a virtual environment: `python -m venv venv`
 4. Activate the virtual environment: `source venv/bin/activate` (Linux/macOS) or `venv\Scripts\activate` (Windows PowerShell)
@@ -33,7 +33,7 @@ To view the data visualization, click on the "View Data Visualization" link.
 - scikit-learn
 - joblib
 - matplotlib
-- jQuery (included via CDN in `layout.html`)
+- jQuery
 
 ## License
 
