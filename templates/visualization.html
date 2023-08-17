@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Visualization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        img.visualization {
+            width: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        #back-link {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Data Visualization</h1>
+    <div class="container">
+        <img src="data:image/png;base64,{{ plot_img }}" alt="Data Visualization" class="visualization">
+        <a href="/" id="back-link">Back to Home</a>
+    </div>
+</body>
+</html>
