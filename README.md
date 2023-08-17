@@ -2,36 +2,6 @@
 
 This is a simple web application built with Flask that allows users to make predictions using trained machine learning models and visualize data using a scatter plot.
 
-## Project Structure
-
-The project is organized as follows:
-
-project_folder/
-│
-├── app.py
-│
-├── models/
-│ ├── model.joblib
-│ ├── model_rf.joblib
-│ └── model_knn.joblib
-│
-├── templates/
-│ ├── index.html
-│ ├── visualization.html
-│ └── layout.html
-│
-├── static/
-│ ├── css/
-│ │ └── style.css
-│ │
-│ ├── js/
-│ │ └── predict.js
-│ │
-│ └── images/ (if needed)
-│
-└── train_model.py
-
-
 ## Features
 
 - Predict using different machine learning models: Choose from the default model, Random Forest, and K-Nearest Neighbors.
