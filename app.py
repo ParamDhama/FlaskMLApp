@@ -4,12 +4,19 @@ import numpy as np
 import matplotlib.pyplot as plt
 from io import BytesIO
 import base64
+from sklearn.datasets import load_iris
 
 app = Flask(__name__)
 
+# Load the Iris dataset
+iris = load_iris()
+X = iris.data
+y = iris.target
+
 # Load the trained models
 model = joblib.load('models/model.joblib')
-model_rf = joblib.load('models/model_rf.joblib')  # Load the additional model
+model_rf = joblib.load('models/model_rf.joblib')
+model_knn = joblib.load('models/model_knn.joblib')
 
 # Display model information
 model_accuracy = 0.95  # Replace with the actual accuracy
@@ -29,6 +36,8 @@ def predict():
         selected_model = model
     elif model_name == 'random_forest':
         selected_model = model_rf
+    elif model_name == 'knn':
+        selected_model = model_knn
 
     if selected_model is None:
         return jsonify({'error': 'Invalid model selection'})
@@ -36,12 +45,12 @@ def predict():
     features = np.array(data['features']).reshape(1, -1)
     prediction = selected_model.predict(features)[0]
 
-    return jsonify({'prediction': prediction})
+    return jsonify({'prediction': int(prediction)})  # Convert prediction to int
 
 @app.route('/visualization')
 def visualization():
     plt.figure(figsize=(8, 6))
-    # Create a sample scatter plot
+    # Create a scatter plot of sepal length vs. sepal width
     plt.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis')
     plt.xlabel('Sepal Length')
     plt.ylabel('Sepal Width')

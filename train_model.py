@@ -4,6 +4,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
 import joblib
+import os
 
 # Load the Iris dataset
 iris = load_iris()
@@ -12,6 +13,15 @@ y = iris.target
 
 # Split the dataset into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Create the "models" directory if it doesn't exist
+if not os.path.exists('models'):
+    os.makedirs('models')
+
+# Train and save the main model
+model = RandomForestClassifier()
+model.fit(X_train, y_train)
+joblib.dump(model, 'models/model.joblib')
 
 # Train and save a Random Forest classifier
 model_rf = RandomForestClassifier()

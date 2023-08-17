@@ -16,7 +16,8 @@ $(document).ready(function() {
                 ]
             }),
             success: function(response) {
-                $('#prediction-result').text('Predicted Class: ' + response.prediction);
+                var predictionResult = 'Predicted Class: ' + response.prediction;
+                $('#prediction-result').text(predictionResult);
             }
         });
     });
